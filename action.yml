@@ -7,8 +7,7 @@ inputs:
     required: true
   message:
     description: 'message's content'
-    required: true
-    default: 'Send message using Github Action for Swit'
+    default: 'Build Success. ${{ github.sha }}'
 runs:
   using: 'docker'
   image: 'Dockerfile'
