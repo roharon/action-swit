@@ -1,0 +1,20 @@
+name: 'Github Action for Swit'
+description: 'Send Message to Swit'
+author: roharon
+inputs:
+  webhooks_url:
+    description: 'your app's webhooks url'
+    required: true
+  message:
+    description: 'message's content'
+    required: true
+    default: 'Send message using Github Action for Swit'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.webhooks_url }}
+    - ${{ inputs.message }}
+branding:
+  color: 'orange'
+  icon: 'send'
