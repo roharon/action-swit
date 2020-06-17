@@ -1,6 +1,6 @@
 # Swit for Github Action
 
-![Publish Docker Image](https://github.com/roharon/action-swit/workflows/Publish%20Docker%20Image/badge.svg)
+![Publish Docker Image](https://github.com/roharon/action-swit/workflows/Publish%20Docker%20Image/badge.svg?branch=v1)
 [![GitHub Releases](https://img.shields.io/github/release/roharon/action-swit.svg)](https://github.com/roharon/action-swit/releases)
 
 Send a message to Swit using Github Actions
@@ -14,7 +14,7 @@ Send a message to Swit using Github Actions
 
 ### `message`
 
-**Required** The message send to swit. Default 
+The message send to swit. Default 
 `"Build Success. ${{ github.sha }}"`
 
 
@@ -24,9 +24,15 @@ Send a message to Swit using Github Actions
 ```yml
 uses: actions/action-swit@v1
 with:
-  webhooks_url: 'https://hook.swit.io/chat/~~~/~~~'
-  message: 'Build Success ${{ github.sha }}
+  webhooks_url: "https://hook.swit.io/chat/~~~/~~~"
+  message: "🏷 Build Successful ${{ github.sha }} - by ${{ github.actor }}"
 ```
+
+You can find Message on Swit.
+
+![image](https://user-images.githubusercontent.com/4939738/85041145-8289d980-b1c4-11ea-94fb-36f89cbef31a.png)
+
+
 
 ## How to get my webhooks_url?
 

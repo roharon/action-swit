@@ -1,8 +1,6 @@
 name: Publish Docker Image
 on:
   push:
-    branches:
-      - master
     tags:
       - v1
 
@@ -15,7 +13,13 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Github Action for Swit
+    - name: Publish Image
+      uses: matootie/github-docker@v3.0.0
+      with:
+        tag: latest
+        accessToken: ${{ github.token }}
+
+    - name: Send message to Swit
       uses: roharon/action-swit@v1
       with:
         webhooks_url: ${{ secrets.WEBHOOKS_URL}}
