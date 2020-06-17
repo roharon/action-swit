@@ -1,0 +1,22 @@
+name: Publish Docker Image
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v1
+
+jobs:
+  publish_image:
+    name: Publish Image
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Publish Image
+      uses: matootie/github-docker@v3.0.0
+      with:
+        tag: latest
+        accessToken: ${{ github.token }}
