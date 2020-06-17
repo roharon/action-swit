@@ -20,3 +20,8 @@ jobs:
       with:
         tag: latest
         accessToken: ${{ github.token }}
+
+    - name: Github Action for Swit
+      uses: roharon/action-swit@v1
+      with:
+        webhooks_url: ${{ secrets.WEBHOOKS_URL}}
