@@ -15,8 +15,9 @@ Send a message to Swit using Github Actions
 ### `message`
 
 The message send to swit. Default 
-`"🏷 Build Successful ${{ github.sha }} - by ${{ github.actor }}"`
+`"🏷 ${{ job.status }} ${{ github.sha }} - by ${{ github.actor }}"`
 
+*[You can search github action's **context** on here](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#contexts)*
 
 
 ## Example Usage
@@ -27,7 +28,7 @@ with:
   webhooks_url: "https://hook.swit.io/chat/~~~/~~~"
 ```
 
-You can find Message on Swit.
+You can find Message on Swit like this.
 
 ![image](https://user-images.githubusercontent.com/4939738/85041145-8289d980-b1c4-11ea-94fb-36f89cbef31a.png)
 
