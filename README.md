@@ -15,17 +15,16 @@ Send a message to Swit using Github Actions
 ### `message`
 
 The message send to swit. Default 
-`"Build Success. ${{ github.sha }}"`
+`"🏷 Build Successful ${{ github.sha }} - by ${{ github.actor }}"`
 
 
 
 ## Example Usage
 
 ```yml
-uses: actions/action-swit@v1
+uses: roharon/action-swit@v1
 with:
   webhooks_url: "https://hook.swit.io/chat/~~~/~~~"
-  message: "🏷 Build Successful ${{ github.sha }} - by ${{ github.actor }}"
 ```
 
 You can find Message on Swit.
